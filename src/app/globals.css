@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* tailwind.css */
+
+@layer utilities {
+    .text-xs-sm {
+      font-size: 0.75rem; /* 12px at the default base font size of 16px */
+      line-height: 1rem; /* Adjust line-height as needed */
+    }
+  
+    .text-xxs {
+      font-size: 0.625rem; /* 10px at the default base font size of 16px */
+      line-height: 0.75rem; /* Adjust line-height as needed */
+    }
+  }
+  
