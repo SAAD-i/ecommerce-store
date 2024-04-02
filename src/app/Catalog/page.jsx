@@ -11,7 +11,9 @@ const page = () => {
   });
   return (
     <div className="pt-[135px] p-2 sm:px-6 md:px-8 lg:px-16 xl:px-24 font-mono">
-      <h1 className="text-3xl font-bold pb-10 text-gray-700">All Products</h1>
+      <h1 className="text-5xl pt-10 font-bold pb-10 text-gray-700">
+        All Products
+      </h1>
       <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
         <Mini />
         <Mini />

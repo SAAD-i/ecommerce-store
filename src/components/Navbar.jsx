@@ -6,11 +6,84 @@ import { useState, useEffect } from "react";
 import { IoCartOutline } from "react-icons/io5";
 import { HiMenu } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
+import { FaAngleDown } from "react-icons/fa";
+import { FaLock } from "react-icons/fa";
 import { useContext } from "react";
 import myContext from "@/context/Context";
 import Banner from "./Banner";
+import { Button } from "./ui/button";
 import Cart from "./Cart";
+import { Dropdown, Space } from "antd";
+
 const Navbar = () => {
+  //////
+  const items = [
+    {
+      key: "1",
+      type: "group",
+      label: "Mens Fashion",
+      children: [
+        {
+          key: "1-1",
+          label: "Perfumes",
+        },
+        {
+          key: "1-2",
+          label: "Watches",
+        },
+      ],
+    },
+    {
+      key: "2",
+      label: "Shoes",
+      children: [
+        {
+          key: "2-1",
+          label: "Joggers",
+        },
+        {
+          key: "2-2",
+          label: "Sneakers",
+        },
+        {
+          key: "2-3",
+          label: "Formals",
+        },
+        {
+          key: "2-4",
+          label: "Traditional",
+        },
+        {
+          key: "2-5",
+          label: "Others",
+        },
+      ],
+    },
+    {
+      key: "3",
+      label: "Clothes",
+      // disabled: true,
+      children: [
+        {
+          key: "3-1",
+          label: "T-shirts",
+        },
+        {
+          key: "3-2",
+          label: "Casual shirts",
+        },
+        {
+          key: "3-3",
+          label: "Traditional",
+        },
+        {
+          key: "3-4",
+          label: "Pents",
+        },
+      ],
+    },
+  ];
+  ////////
   const { menu, setMenu } = useContext(myContext);
   const { cartItems } = useContext(myContext);
   const { route, setRoute } = useContext(myContext);
@@ -42,27 +115,27 @@ const Navbar = () => {
     >
       <Banner />
       <div
-        className={`w-full px-3 py-4 md:px-8 lg:px-12 xl:px-16 font-mono flex justify-between items-center border-b-2 border-gray-200 `}
+        className={`w-full px-3 py-4 md:px-8 lg:px-12 xl:px-16 font-sans flex justify-between items-center border-b-2 border-gray-200 `}
       >
         {menu ? (
           <IoClose
             onClick={() => setMenu(!menu)}
-            className="text-3xl hover:cursor-pointer sm:hidden scale-105 hover:opacity-80 hover:scale-110 duration-300 ease-out"
+            className="text-3xl hover:cursor-pointer w-1/3 sm:hidden scale-105 hover:opacity-80 hover:scale-110 duration-300 ease-out"
           />
         ) : (
           <HiMenu
             onClick={() => setMenu(!menu)}
-            className="text-3xl hover:cursor-pointer sm:hidden hover:opacity-80 hover:scale-105 duration-300 ease-out"
+            className="text-3xl hover:cursor-pointer w-1/3 sm:hidden hover:opacity-80 hover:scale-105 duration-300 ease-out"
           />
         )}
 
         <div
           onClick={() => router.push("/")}
-          className="text-xl sm:text-3xl hover:cursor-pointer font-bold text-green-700"
+          className="text-xl sm:text-3xl w-1/6 hover:cursor-pointer sm:block flex justify-center items-center font-bold"
         >
-          IKhan<span className="text-black">Bazaar</span>
+          <img src={"/images/logo.png"} className="" />
         </div>
-        <ul className="sm:flex items-center gap-7 hidden">
+        <ul className="sm:flex w-full pl-16 items-center gap-7 hidden">
           <Link
             href={"/"}
             className={`border-b-2 ${
@@ -79,6 +152,19 @@ const Navbar = () => {
           >
             Catalog
           </Link>
+          <Dropdown
+            menu={{
+              items,
+            }}
+          >
+            <Link href={""} onClick={(e) => e.preventDefault()}>
+              <Space className="flex items-center cursor-pointer">
+                Mens
+                <FaAngleDown />
+              </Space>
+            </Link>
+          </Dropdown>
+
           <Link
             href={"/Contact"}
             className={`border-b-2 ${
@@ -86,6 +172,11 @@ const Navbar = () => {
             } duration-300 ease-out hover:border-green-700`}
           >
             Contact
+          </Link>
+          <Link href={"/Admin"}>
+            <Button className="flex items-center gap-2">
+              Admin <FaLock />
+            </Button>
           </Link>
         </ul>
         <div className="flex items-center gap-5 justify-end">

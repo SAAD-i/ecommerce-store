@@ -11,9 +11,9 @@ const page = () => {
   });
   return (
     <>
-      <div className="h-full text-black font-mono pt-[105px]">
+      <div className="h-full text-black font-sans pt-[105px]">
         <Hero />
-        <h1 className="text-2xl font-bold text-black py-3 pt-8 font-sans text-center">
+        <h1 className="text-5xl font-bold text-black py-8 pt-8 font-sans px-12">
           Top Selling
         </h1>
         <div className="flex justify-center items-center">

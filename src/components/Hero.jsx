@@ -8,7 +8,7 @@ const Hero = () => {
   const router = useRouter();
   return (
     <>
-      <div className="flex w-full flex-col justify-center items-center gap-16 border-b pb-10 bg-gray-100">
+      <div className="flex w-full py-24 flex-col justify-center items-center gap-16 border-b pb-10 bg-gray-100">
         <div className="h-32 gap-8 p-4 pt-16 flex justify-between sm:justify-center sm:gap-20 items-center">
           <div>
             <div className="w-28 h-28 pt-2 pl-1 bg-gray-500 overflow-hidden border rounded-full">
