@@ -33,7 +33,7 @@ const Main = () => {
       </div>
       <div className="pr-2 flex flex-col gap-3 md:w-1/3">
         <h5 className="font-thin text-sm py-2 tracking-wider">
-          <span className="text-green-700 text-xs-sm">IKhan</span>Bazaar
+          <span className="text-green-700 text-xs-sm">Mega</span>SalesPK
         </h5>
         <h2 className="text-xl font-medium pr-6">
           2-in-1 Dumpling Wrapper Mold Samosa Maker with Pastry Handle
